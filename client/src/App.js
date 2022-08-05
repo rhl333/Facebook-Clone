@@ -1,11 +1,17 @@
-const fetchData = async () => {
-  let response = await fetch("http://localhost:8000/data");
-  let data = await response.json();
-  console.log(data);
-};
-fetchData();
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/home/Home";
+import Login from "./components/login/Login";
+import Profile from "./components/Profile/Profile";
 function App() {
-  return <div className="App">App</div>;
+  return (
+    <div className="App">
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
