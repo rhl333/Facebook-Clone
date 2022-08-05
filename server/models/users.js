@@ -22,6 +22,7 @@ let userSchema = mongoose.Schema(
       unique: true,
     },
     email: {
+      required: true,
       type: String,
       required: true,
       trim: true,
@@ -43,17 +44,17 @@ let userSchema = mongoose.Schema(
       required: true,
     },
     bYear: {
-      type: Number,
+      type: String,
       required: true,
       trim: true,
     },
     bMonth: {
-      type: Number,
+      type: String,
       required: true,
       trim: true,
     },
     bDay: {
-      type: Number,
+      type: String,
       required: true,
       trim: true,
     },

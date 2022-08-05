@@ -29,12 +29,6 @@ let register = async (req, res) => {
     return;
   }
 
-  // check userName length
-  if (userName.length < 4 || userName.length > 10) {
-    res.status(400).send("username must be in between 3 and 10 characters");
-    return;
-  }
-
   // check password length
   if (password.length < 6 || password.length > 50) {
     res.status(400).send("password must be greater than 5 characters");

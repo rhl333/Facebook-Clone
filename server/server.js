@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 let userRouter = require("./routes/users");
+let cors = require("cors");
 
 // initlizing the server
 const server = express();
@@ -8,6 +9,8 @@ const server = express();
 // setting up some default middlewares
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
+
+server.use(cors({ origin: "http://localhost:3000" }));
 
 const start = async () => {
   await mongoose.connect("mongodb://127.0.0.1/facebook");
